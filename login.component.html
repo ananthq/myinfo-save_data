@@ -1,0 +1,73 @@
+<div class="materialContainer">
+
+  <mat-progress-bar color="accent" style="border-top-left-radius: 50px;border-top-right-radius: 50px;z-index: 2;"
+    mode="indeterminate" *ngIf="progressHide"></mat-progress-bar>
+
+  <div class="box">
+    <div class="title">LOGIN</div>
+    <div class="input">
+      <p *ngIf="email" style="color:white">Email</p>
+      <input type="text" [(ngModel)]="email" matInput placeholder="Email">
+    </div>
+
+    <div class="input">
+      <p *ngIf="password" style="color:white">Password</p>
+      <input type="password" [(ngModel)]="password" matInput placeholder="password">
+    </div>
+
+    <div class="button login">
+      <button (click)="login()"><span>Login</span> <i class="fa fa-check"></i></button>
+    </div>
+    
+    <a class="pass-forgot" (click)="forgotPswd()" style="color:rgb(214, 93, 62);cursor: pointer;">Forgot your password?</a><br>
+    <span class="pass-forgot"  style="color:#ED2553">If you'r new user ? <b style="color:#ED2553;cursor: pointer;" (click)="signup()">SignUp</b></span>
+  </div>
+ 
+  <mat-card style="background-color: cornflowerblue;background-color:whitesmoke"
+    *ngIf="!currentState?.hasInternetAccess">
+
+     <!-- Network Status: <span [ngStyle]="{'color':currentState?.hasNetworkConnection?'green':'red'}">
+              {{ currentState?.hasNetworkConnection && hasInternetAccess ? 'ONLINE' : 'OFFLINE' }}!
+            </span>  -->
+
+    <span style="color:red;font-size:15px;">
+     <b>No Internet connection please check WIFI or Internent Cable</b> 
+    </span>
+  </mat-card>
+</div>
+
+<!-- <div>
+  <input type="text" (keyup)="save($event)" matInput placeholder="name"><br>
+
+  <input type="text" [(ngModel)]="city" matInput placeholder="city"><br>
+
+  <input type="text" [(ngModel)]="state" matInput placeholder="state"><br>
+
+  <input type="text" [(ngModel)]="code" matInput placeholder="code"><br><br>
+
+
+  <button (click)="save()">save</button> 
+</div> -->
+<!-- <div>
+  <table>
+    <th>
+      <tr>
+        <h1  *ngFor="let data of getData;let i = index"><img src="{{data.items[i].avatar_url}}"></h1>
+      </tr>
+    </th>
+  </table>
+  <span >
+    <img src={{data.items[i].avatar_url}}>
+  </span> 
+</div> -->
+
+
+
+  <div class="container" >
+    <div class="row">
+      <mat-card class="col-md-4 col-sm-6 col-lg-4 col-xs-12"  *ngFor="let details of getData;let i=index">
+          <img width="360px" src={{details.items[i].avatar_url}}>
+      </mat-card>
+    </div>
+   
+  </div>

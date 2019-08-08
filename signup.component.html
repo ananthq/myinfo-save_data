@@ -1,0 +1,126 @@
+<div style="margin-top:50px;float:left;margin-left:15px">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Ananth -->
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8539442237477862" data-ad-slot="8976699170"
+    data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+<div style="float:right;margin-top:50px;margin-right:15px">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Ananth R -->
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8539442237477862" data-ad-slot="2252342875"
+    data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script><br>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Ananth R -->
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8539442237477862" data-ad-slot="2252342875"
+    data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+<mat-card style="background-color: cornflowerblue;background-color:whitesmoke;margin-top:-40px"
+  *ngIf="!currentState?.hasNetworkConnection">
+
+  <!-- Network Status: <span [ngStyle]="{'color':currentState?.hasNetworkConnection?'green':'red'}">
+        {{ currentState?.hasNetworkConnection ? 'ONLINE' : 'OFFLINE' }}!
+      </span> -->
+  <marquee><span style="color:red;font-size:16px;">
+      <b>No Internet connection please check WIFI or Internet cable</b><b style="margin-left:410px">No Internet
+        connection please check WIFI or Internet cable</b>
+    </span></marquee>
+
+</mat-card>
+
+<div class="card" style="z-index: -1">
+  <mat-progress-bar color="accent" style="border-top-left-radius: 50px;border-top-right-radius: 50px;z-index: 2;"
+    mode="indeterminate" *ngIf="progressHide"></mat-progress-bar>
+  <div class="header">
+    <h2 style="margin-left:100px;color:#ff4081"><b>My Info <br> Sign Up</b></h2>
+    <!-- <p>Drop us a message and we will contact you back shortly</p> -->
+    <img style="width:360px;margin-top:-10px;margin-left:-15px" src="assets/images/Paper.jpg">
+
+    <!-- <div style="position:absolute;margin-top: -40px">
+      <span [style.background-color]="experienced ? '#2196f3' : '#ffffff00'" [style.color]="experienced ? '#FFFFFF' : '#2196f3'" style="border-radius: 5px;text-align:center;width: 55%;padding: 8px;border: 1px solid
+    #2196f3;cursor: pointer" (click)="experienceClick(experienced)"><b>Experience</b>
+      </span>
+
+      <span [style.background-color]="fresher ? '#2196f3' : '#ffffff00'" [style.color]="fresher ? '#FFFFFF' : '#2196f3'" style="border-radius: 5px;text-align:center;width: 55%;padding: 8px 25px ;border: 1px solid
+    #2196f3;cursor: pointer;margin-left:120px"  (click)="fresherClick(fresher)"><b>Fresher</b>
+      </span>
+    </div> -->
+
+  </div>
+  <form class="form-wrap" id="md-form" autocomplete="off" method="get">
+    <mat-form-field style="width:100%">
+      <input matInput placeholder="Full Name" [(ngModel)]="username" [ngModelOptions]="{standalone: true}" required>
+    </mat-form-field>
+
+    <mat-form-field style="width:100%">
+      <mat-select [disabled]="!username" [(ngModel)]="workstatus" placeholder="Select work status"
+        [ngModelOptions]="{standalone: true}" required>
+        <mat-option value="Fresher">Fresher</mat-option>
+        <mat-option value="Experience">Experience</mat-option>
+        <!-- <mat-option value="Others">Others</mat-option> -->
+      </mat-select>
+    </mat-form-field>
+
+    <div class="input-wrap">
+      <mat-form-field style="width:100%">
+        <input [disabled]="!workstatus" matInput placeholder="email" [(ngModel)]="email"
+          [ngModelOptions]="{standalone: true}" required>
+      </mat-form-field>
+    </div>
+
+    <div class="input-wrap">
+      <mat-form-field style="width:100%">
+        <input [disabled]="!email" matInput placeholder="Mobile Number" [(ngModel)]="mobile"
+          [ngModelOptions]="{standalone: true}" required>
+      </mat-form-field>
+    </div>
+
+    <div class="input-wrap">
+      <mat-form-field style="width:100%">
+        <mat-select [disabled]="!mobile" [(ngModel)]="genderselecte" placeholder="Select Gender"
+          [ngModelOptions]="{standalone: true}" required>
+          <mat-option value="Male">Male</mat-option>
+          <mat-option value="Female">Female</mat-option>
+          <!-- <mat-option value="Others">Others</mat-option> -->
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+
+    <div class="input-wrap">
+      <mat-form-field style="width:100%">
+        <input [disabled]="!genderselecte" matInput placeholder="Password" [(ngModel)]="password" type="password"
+          [ngModelOptions]="{standalone: true}" required>
+      </mat-form-field>
+    </div>
+
+    <div class="input-wrap">
+      <mat-form-field style="width:100%">
+        <input [disabled]="!password" matInput placeholder="Confirm Password" [(ngModel)]="cnfpassword"
+          [ngModelOptions]="{standalone: true}" required>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <input [disabled]="!cnfpassword" type="checkbox" [(ngModel)]="checkbox" [ngModelOptions]="{standalone: true}">
+      <span>You agree on our terms and conditions</span>
+    </div>
+
+    <div class="input-wrap" align="center">
+      <button id="confirm" [disabled]="!checkbox" type="submit" (click)="SignUp()">SignUp</button>
+    </div>
+    <h5>If you have already Account ? <span (click)="login()"
+        style="color:tomato;font-size:15px;cursor: pointer;"><b>Login</b></span> </h5>
+  </form>
+
+</div>
